@@ -10,9 +10,9 @@ require APPROOT. '/views/inc/header.php';
 <h1> <?= $data['title'] ?> </h1>
 
 
-<?php
+<p> <?= $data['description'] ?> </p>
 
-require APPROOT. '/views/inc/footer.php';
+<?php require APPROOT. '/views/inc/footer.php';
 
 ?>
 

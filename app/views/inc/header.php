@@ -15,4 +15,11 @@
 	<link rel="stylesheet" href="<?php echo URLROOT ; ?>/css/style.css">
 </head>
 <body>
+
+	<div class="container">
+		
+
+<?php require APPROOT . '/views/inc/navbar.php' ; ?>
+
+	
 	
