@@ -41,6 +41,27 @@ public function __construct() {
 
 
 	$this->currentController = new $this->currentController;
+
+
+	// check for second part of the url 
+
+	if(isset($url[1])) {
+		// check to see if method exists
+
+		if(method_exists($this->currentController, $url[1] )) {
+
+
+			$this->currentMethod = $url[1] ;
+			unset($url[1]); 
+		}
+	}
+
+
+	// get parameters
+
+	$this->params = $url ? array_values($url) : [] ;
+
+	call_user_func_array([$this->currentController, $this->currentMethod], $this->params);
 }
 
 	public function getUrl() {
