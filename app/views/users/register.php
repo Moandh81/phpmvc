@@ -68,7 +68,7 @@ require APPROOT. '/views/inc/header.php';
 
 				<div class="col">
 				
-				<a href="<?=  URLROOT ; ?>/users/login" class="btn btn-light btn-block" >No Account ? Register </a>	
+				<a href="<?=  URLROOT ; ?>/users/login" class="btn btn-light btn-block" > Have an account ? Login </a>	
 			</div>
 		</div>
 

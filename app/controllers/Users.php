@@ -48,15 +48,43 @@ class Users extends Controller {
 	}
 
 
-public function index() {
 
 
-		$this->view('users/login' );
 
 
+
+public function login() {
+
+		// check for POST  request
+
+		if ($_SERVER["REQUEST_METHOD"] == 'POST') {
+			// process form
+
+
+		}
+
+		else {
+
+			// load form
+
+			$data = [
+
+				
+				'email' => '' ,
+				'password' => '' ,
+				'email_error' => '' ,
+				'password_error' => '' ,
+
+
+			] ;
+
+			//load view
+
+			$this->view('users/login', $data);
+
+
+		}
 	}
-
-
 
 
 }
