@@ -14,7 +14,7 @@ require APPROOT. '/views/inc/header.php';
 		
 	<h2 class="mx-auto">Create an account</h2>
 
-	<p>Please fill out this form to regsiter with us </p>
+	<p>Please fill out this form to register with us </p>
 
 	<form action="<?php echo URLROOT ; ?>/users/register" method="post">
 		
@@ -51,10 +51,10 @@ require APPROOT. '/views/inc/header.php';
 		
 		<div class="form-group">
 			<label for="confirm-password">Confirm  Password : <sup >*</sup></label>
-			<input type="password" name="confirm-password" class="form-control form-control-lg <?php 
+			<input type="password" name="confirm_password" class="form-control form-control-lg <?php 
 			echo (!empty($data['confirm_password_errors'])) ? 'is-invalid' : '' ; ?> " value=<?= $data["confirm_password"]  ?>	>
 
-			<span class="invalid-feedback"><?php echo $data['password_error'] ; ?></span>
+			<span class="invalid-feedback"><?php echo $data['confirm_password_error'] ; ?></span>
 		</div>
 
 
