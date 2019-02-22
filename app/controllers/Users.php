@@ -7,7 +7,9 @@ class Users extends Controller {
 
 	public function __construct() {
 
-		// will lod the model	
+		// will load the model
+		$this->userModel = $this->model('User');
+
 	}
 
 
@@ -43,6 +45,15 @@ class Users extends Controller {
 
 			if (empty($data['email'])) {
 				$data['email_error'] = 'Please enter Email' ;
+
+			}
+			// check if email alreay taken
+
+
+			 elseif ($this->userModel->findUserByEmail($data['email'])) {
+
+			 	$data['email_error'] = 'Email already taken' ;
+
 			}
 
 			// valide the name 

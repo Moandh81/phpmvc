@@ -64,7 +64,7 @@ class Database {
 
 	public function bind($params, $value, $type = null) {
 
-		if (isnull($type)) {
+		if (is_null($type)) {
 			
 			switch(true) {
 
@@ -88,7 +88,7 @@ class Database {
 			}
 		}
 	
-		$this->stmt->bindValue($param, $value, $type) ;
+		$this->stmt->bindValue($params, $value, $type) ;
 
 	}
 
