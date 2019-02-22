@@ -11,7 +11,8 @@ require APPROOT. '/views/inc/header.php';
 	<div class="card card-body bg-light mt-5">
 		
 	<h2 class="mx-auto">Log in your account</h2>
-
+	
+	<?php flash('register_success') ; ?>
 
 	<form action="<?php echo URLROOT ; ?>/users/register" method="post">
 		
