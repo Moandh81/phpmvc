@@ -46,13 +46,14 @@ class Users extends Controller {
 			if (empty($data['email'])) {
 				$data['email_error'] = 'Please enter Email' ;
 
-			}
-			// check if email alreay taken
+			} elseif ($this->userModel->findUserByEmail($data['email'])) { 
+ 	  
 
-
-			 elseif ($this->userModel->findUserByEmail($data['email'])) {
+			 	  	// check if email alreay taken
 
 			 	$data['email_error'] = 'Email already taken' ;
+
+			
 
 			}
 
@@ -88,7 +89,22 @@ class Users extends Controller {
 				empty($data["confirm_password_error"]) )
 				  {
 
-					die("success") ;
+					// hash the password
+
+					$data["password"] = password_hash($data["password"], PASSWORD_DEFAULT) ; 
+
+					// call the model register
+
+					if ($this->userModel->register($data)) {
+
+						redirect('users/login') ;
+					}
+
+					else {
+
+						die("something went wrong") ;
+					}
+
 				}
 
 			else {
