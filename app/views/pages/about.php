@@ -1,11 +1,6 @@
 <?php
 
-require APPROOT. '/views/inc/header.php';
-
-?>
-
-
-
+require APPROOT. '/views/inc/header.php';  ?>
 
 <h1> <?= $data['title'] ?> </h1>
 

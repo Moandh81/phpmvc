@@ -7,13 +7,13 @@ class Users extends Controller {
 
 	public function __construct() {
 
-
+		// will lod the model	
 	}
 
 
 	public function register() {
 
-		// check for POST  request
+		// check for POST request
 
 		if ($_SERVER["REQUEST_METHOD"] == 'POST') {
 			
@@ -63,10 +63,10 @@ class Users extends Controller {
 			}
 
 			if (empty($data['confirm_password'])) {
-				$data['confirm_password_error'] == "Please confirm password" ;
+				$data['confirm_password_error'] = "Please confirm password" ;
 			} else if ( $data['confirm_password'] != $data['password']) {
 
-				$data['confirmpassword_error'] == "Passwords do not match" ;	
+				$data['confirm_password_error'] = "Passwords do not match" ;	
 			}
 
 			// make sure errors are empty 
@@ -74,16 +74,16 @@ class Users extends Controller {
 			if (empty($data["email_error"]) &&
 				empty($data["name_error"]) &&
 				empty($data["password_error"]) &&
-				empty($data["confirm_password_error"]) 
-)  {
+				empty($data["confirm_password_error"]) )
+				  {
 
-				die("success") ;
-			}
+					die("success") ;
+				}
 
 			else {
-				$this->view('users/register', $data);
+					$this->view('users/register', $data);
 	
-}
+				}
 			
 
 		}
@@ -91,6 +91,8 @@ class Users extends Controller {
 		else {
 
 			// load form
+
+			// init data 
 
 			$data = [
 
